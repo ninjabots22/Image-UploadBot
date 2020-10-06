@@ -26,7 +26,11 @@ async def cmds(client, message):
 @TGraph.on_message(filters.command("info"))
 async def info(client, message):
     await message.reply_text(f"<b>I'm a Telegraph Photo Uploader Bot.\nYou can Send any photos and get the telegraph link in return\n\nⓂ️ I'm Hosted on 200$ VPS on Azure.\n\n💠 I'm made by @Ninja_Bots</b>", True)
- 
+
+@TGraph.on_message(filters.command("help"))
+async def help(client, message):
+    await message.reply_text(f"<b>How to Use?</b>\n\nJust send any Photo and wait for few seconds.\nI will upload it to Telegraph and send it's link to you!", True)
+
 @TGraph.on_message(filters.photo)
 async def getimage(client, message):
     tmp = os.path.join("downloads",str(message.chat.id))
