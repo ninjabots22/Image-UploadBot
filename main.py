@@ -37,10 +37,10 @@ async def getimage(client, message):
     if not os.path.isdir(tmp):
         os.makedirs(tmp)
     imgdir = tmp + "/" + str(message.message_id) +".jpg"
-    dwn = await message.reply_text("💠Processing Using Ninja Bots Server...", True)    
+    dwn = await message.reply_text("💠Processing Using Ninja Bots Server.", True)    
+    await dwn.edit_text("💠Processing Using Ninja Bots Server..")
     await dwn.edit_text("💠Processing Using Ninja Bots Server...")
-    await dwn.edit_text("💠Processing Using Ninja Bots Server...")
-    await dwn.edit_text("💠Connecting to VPS...")
+    await dwn.edit_text("💠Connecting to VPS..")
     await dwn.edit_text("💠Connecting to VPS...")
     await client.download_media(
             message=message,
