@@ -52,7 +52,7 @@ async def getimage(client, message):
     except Exception as error:
         await dwn.edit_text(f"Oops something went wrong\n{error}")
         return
-    await dwn.edit_text(f"https://telegra.ph{response[0]}")
+    await dwn.edit_text(f"https://telegra.ph{response[0]}", disable_web_page_preview=True)
     shutil.rmtree(tmp,ignore_errors=True)
 
 
