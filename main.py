@@ -18,7 +18,15 @@ TGraph = Client(
 @TGraph.on_message(filters.command("start"))
 async def start(client, message):
     await message.reply_text(f"<b>Hey {message.from_user.first_name}, Welcome to this bot</b>\n\nI can Upload Any Photos to Telegraph! Type /cmds to know the Available Commands\n\n<b>💠 I'm made by @Ninja_Bots</b>", True)
-    
+ 
+@TGraph.on_message(filters.command("cmds"))
+async def cmds(client, message):
+    await message.reply_text(f"<b>Available Commands\n\n/start - Restarts the Bot\n/help - How to use the Bot\n/cmds - Brings up this message\n/info - Info about the Bot\n\n💠 I'm made by @Ninja_Bots</b>", True)
+ 
+@TGraph.on_message(filters.command("info"))
+async def info(client, message):
+    await message.reply_text(f"<b>I'm a Telegraph Photo Uploader Bot.\nYou can Send any photos and get the telegraph link in return\n\nⓂ️ I'm Hosted on 200$ VPS on Azure.\n\n💠 I'm made by @Ninja_Bots</b>", True)
+ 
 @TGraph.on_message(filters.photo)
 async def getimage(client, message):
     tmp = os.path.join("downloads",str(message.chat.id))
